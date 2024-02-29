@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20240103 16:29:40.993" rpa="false" schemaversion="4">
+<suite id="s1" name="Script" source="/Users/root1/Documents/Test/AutomatisationTest_Credit-Auto/test/script.robot">
+<test id="s1-t1" name="Scenario connexion administrateur" line="11">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240103 16:29:41.864" level="INFO">Opening browser 'Edge' to base url 'http://credit-auto.qsiconseil.ma/'.</msg>
+<status status="PASS" starttime="20240103 16:29:41.863" endtime="20240103 16:29:51.035"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240103 16:29:51.037" endtime="20240103 16:29:51.504"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Ouverture du navigateur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:29:51.504" endtime="20240103 16:29:51.505"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:41.863" endtime="20240103 16:29:51.506"/>
+</kw>
+<kw name="Accéder à la page d'authentication" library="simulation_credit-auto">
+<kw name="Cliquer sur le boutton &quot;Acces Credit Auto&quot;" library="accueil">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${idBtnAccesCreditAuto}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240103 16:29:51.511" level="INFO">Clicking link 'id:lnkAccesCreditAuto'.</msg>
+<status status="PASS" starttime="20240103 16:29:51.508" endtime="20240103 16:29:52.292"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:51.508" endtime="20240103 16:29:52.293"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:51.506" endtime="20240103 16:29:52.293"/>
+</kw>
+<kw name="Saisir les identifiants de l'administatrateur credit" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${idUsername}</arg>
+<arg>${username_LDAP_Admin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 16:29:52.296" level="INFO">Typing text 'acd' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20240103 16:29:52.295" endtime="20240103 16:29:52.590"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${idPassword}</arg>
+<arg>${password_LDAP_Admin}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 16:29:52.592" level="INFO">Typing text 'acial!acd2018' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20240103 16:29:52.590" endtime="20240103 16:29:52.806"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${xpathBtnConnexion}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240103 16:29:52.807" level="INFO">Clicking button 'xpath:/html/body/div[2]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20240103 16:29:52.806" endtime="20240103 16:29:53.678"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpathAcd}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240103 16:29:53.679" endtime="20240103 16:29:53.735"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Connexion de l'administrateur credit</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:29:53.735" endtime="20240103 16:29:53.736"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:52.294" endtime="20240103 16:29:53.736"/>
+</kw>
+<kw name="Deconnexion des utilisateurs" library="simulation_credit-auto">
+<kw name="Cliquer sur le bouton de deconnexion" library="logout">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${idBtnDeconnexion}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240103 16:29:53.737" level="INFO">Clicking element 'id:lnkDeconnexion'.</msg>
+<status status="PASS" starttime="20240103 16:29:53.737" endtime="20240103 16:29:54.213"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Vous êtes deconnecté</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:29:54.213" endtime="20240103 16:29:54.214"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:53.737" endtime="20240103 16:29:54.214"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:53.736" endtime="20240103 16:29:54.214"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240103 16:30:04.215" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240103 16:29:54.215" endtime="20240103 16:30:04.216"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240103 16:30:04.216" endtime="20240103 16:30:04.522"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fermeture du navigateur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:30:04.523" endtime="20240103 16:30:04.524"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:54.214" endtime="20240103 16:30:04.524"/>
+</kw>
+<status status="PASS" starttime="20240103 16:29:41.862" endtime="20240103 16:30:04.524"/>
+</test>
+<test id="s1-t2" name="Scenarion connexion du responsable credit" line="15">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240103 16:30:04.527" level="INFO">Opening browser 'Edge' to base url 'http://credit-auto.qsiconseil.ma/'.</msg>
+<status status="PASS" starttime="20240103 16:30:04.526" endtime="20240103 16:30:11.304"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240103 16:30:11.304" endtime="20240103 16:30:11.759"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Ouverture du navigateur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:30:11.759" endtime="20240103 16:30:11.759"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:04.526" endtime="20240103 16:30:11.760"/>
+</kw>
+<kw name="Accéder à la page d'authentication" library="simulation_credit-auto">
+<kw name="Cliquer sur le boutton &quot;Acces Credit Auto&quot;" library="accueil">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${idBtnAccesCreditAuto}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20240103 16:30:11.763" level="INFO">Clicking link 'id:lnkAccesCreditAuto'.</msg>
+<status status="PASS" starttime="20240103 16:30:11.762" endtime="20240103 16:30:12.577"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:11.761" endtime="20240103 16:30:12.577"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:11.760" endtime="20240103 16:30:12.577"/>
+</kw>
+<kw name="Connexion du responsable credit" library="simulation_credit-auto">
+<kw name="Saisir les identifiants du responsable credit" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${idUsername}</arg>
+<arg>${username_LDAP_Responsable_Credit}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 16:30:12.579" level="INFO">Typing text 'rcd' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20240103 16:30:12.578" endtime="20240103 16:30:12.836"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${idPassword}</arg>
+<arg>${password_LDAP_Responsable_Credit}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 16:30:12.836" level="INFO">Typing text 'acial!rcd2018' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20240103 16:30:12.836" endtime="20240103 16:30:13.004"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${xpathBtnConnexion}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240103 16:30:13.005" level="INFO">Clicking button 'xpath:/html/body/div[2]/div/div/form/fieldset/button'.</msg>
+<status status="PASS" starttime="20240103 16:30:13.004" endtime="20240103 16:30:13.853"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpathRcd}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240103 16:30:13.853" endtime="20240103 16:30:13.910"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Connexion du responsable credit</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:30:13.910" endtime="20240103 16:30:13.910"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:12.578" endtime="20240103 16:30:13.910"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:12.577" endtime="20240103 16:30:13.910"/>
+</kw>
+<kw name="Deconnexion des utilisateurs" library="simulation_credit-auto">
+<kw name="Cliquer sur le bouton de deconnexion" library="logout">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${idBtnDeconnexion}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240103 16:30:13.912" level="INFO">Clicking element 'id:lnkDeconnexion'.</msg>
+<status status="PASS" starttime="20240103 16:30:13.912" endtime="20240103 16:30:14.382"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Vous êtes deconnecté</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:30:14.383" endtime="20240103 16:30:14.383"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:13.911" endtime="20240103 16:30:14.383"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:13.910" endtime="20240103 16:30:14.383"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240103 16:30:24.386" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240103 16:30:14.385" endtime="20240103 16:30:24.386"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240103 16:30:24.386" endtime="20240103 16:30:24.645"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fermeture du navigateur</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240103 16:30:24.646" endtime="20240103 16:30:24.646"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:14.384" endtime="20240103 16:30:24.646"/>
+</kw>
+<status status="PASS" starttime="20240103 16:30:04.525" endtime="20240103 16:30:24.646"/>
+</test>
+<status status="PASS" starttime="20240103 16:29:40.998" endtime="20240103 16:30:24.648"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Script">Script</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

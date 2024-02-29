@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20231215 17:01:04.571" rpa="false" schemaversion="4">
+<suite id="s1" name="Script" source="/Users/root1/Documents/Test/AutomatisationTest/script.robot">
+<test id="s1-t1" name="Ouvrir le navigateur et se connecter à Google" line="12">
+<kw name="Navigation vers Amazon">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 17:01:05.702" level="INFO">Opening browser 'Safari' to base url 'https://www.amazon.fr'.</msg>
+<status status="PASS" starttime="20231215 17:01:05.701" endtime="20231215 17:01:16.696"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 17:01:16.699" endtime="20231215 17:01:16.758"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${idContinuerSansAccepter}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 17:01:16.760" level="INFO">Clicking element 'id:sp-cc-rejectall-link'.</msg>
+<status status="PASS" starttime="20231215 17:01:16.759" endtime="20231215 17:01:17.567"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${text}</arg>
+<arg>${motClé}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 17:01:17.569" level="INFO">Typing text 'Amazon' into text field 'xpath://*[@id="APjFqb"]'.</msg>
+<msg timestamp="20231215 17:01:18.020" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231215 17:01:18.021" level="FAIL">Element with locator 'xpath://*[@id="APjFqb"]' not found.</msg>
+<status status="FAIL" starttime="20231215 17:01:17.567" endtime="20231215 17:01:18.032"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>class:LC20lb MBeuO DKV0Md</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231215 17:01:18.033" endtime="20231215 17:01:18.033"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20231215 17:01:18.033" endtime="20231215 17:01:18.033"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" starttime="20231215 17:01:18.033" endtime="20231215 17:01:18.033"/>
+</kw>
+<status status="FAIL" starttime="20231215 17:01:05.700" endtime="20231215 17:01:18.033"/>
+</kw>
+<status status="FAIL" starttime="20231215 17:01:05.698" endtime="20231215 17:01:18.034">Element with locator 'xpath://*[@id="APjFqb"]' not found.</status>
+</test>
+<status status="FAIL" starttime="20231215 17:01:04.575" endtime="20231215 17:01:18.035"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Script">Script</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

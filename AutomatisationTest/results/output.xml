@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.7 on darwin)" generated="20231215 21:02:42.877" rpa="false" schemaversion="4">
+<suite id="s1" name="Test2" source="/Users/root1/Documents/Test/AutomatisationTest/test/test2.robot">
+<test id="s1-t1" name="Scnearion de creation de commande" line="11">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 21:02:45.074" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20231215 21:02:45.073" endtime="20231215 21:03:31.071"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 21:03:31.072" endtime="20231215 21:03:31.550"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Ouverture du navigateur ${BROWSER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231215 21:03:31.551" endtime="20231215 21:03:31.552"/>
+</kw>
+<status status="PASS" starttime="20231215 21:02:45.072" endtime="20231215 21:03:31.552"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Test de bout en bout pour la création de commande</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231215 21:03:31.552" endtime="20231215 21:03:31.553"/>
+</kw>
+<kw name="Authentification réussi" library="scenario_creation_commande">
+<kw name="Renseigner le username" library="authentification">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${chmpUsername}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:31.556" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20231215 21:03:31.555" endtime="20231215 21:03:32.065"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:31.554" endtime="20231215 21:03:32.066"/>
+</kw>
+<kw name="Renseigner le mot de passe" library="authentification">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${chmpPassword}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:32.068" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 21:03:32.067" endtime="20231215 21:03:32.417"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:32.066" endtime="20231215 21:03:32.418"/>
+</kw>
+<kw name="Cliquer sur le bouton Login" library="authentification">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${chpLogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:32.420" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20231215 21:03:32.419" endtime="20231215 21:03:33.068"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:32.418" endtime="20231215 21:03:33.068"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:31.553" endtime="20231215 21:03:33.068"/>
+</kw>
+<kw name="Affichage de tous les produits" library="scenario_creation_commande">
+<kw name="Cliquer le sur produit Sauce Laps Backpak" library="products">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${chpLapsBackpak}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:33.072" level="INFO">Clicking element 'id:item_4_title_link'.</msg>
+<status status="PASS" starttime="20231215 21:03:33.070" endtime="20231215 21:03:33.524"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:33.070" endtime="20231215 21:03:33.524"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:33.069" endtime="20231215 21:03:33.524"/>
+</kw>
+<kw name="Description du produit sélectionné" library="scenario_creation_commande">
+<kw name="Cliquer Add To Cart" library="descriptionProduct">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${chpAddToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:33.527" level="INFO">Clicking element 'id:add-to-cart-sauce-labs-backpack'.</msg>
+<status status="PASS" starttime="20231215 21:03:33.525" endtime="20231215 21:03:33.640"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:33.525" endtime="20231215 21:03:33.641"/>
+</kw>
+<kw name="Verifier que le produit a ete bien ajoute au panier" library="descriptionProduct">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${chpRemove}</arg>
+<arg>${msgRemove}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20231215 21:03:33.642" endtime="20231215 21:03:33.753"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:33.641" endtime="20231215 21:03:33.753"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:33.524" endtime="20231215 21:03:33.753"/>
+</kw>
+<kw name="Panier" library="scenario_creation_commande">
+<kw name="Cliquer sur checkout pour commander le produit sélectionné" library="panier">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${chpCheckout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 21:03:33.756" level="INFO">Clicking element 'id:checkout'.</msg>
+<msg timestamp="20231215 21:03:54.423" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231215 21:03:54.424" level="FAIL">Element with locator 'id:checkout' not found.</msg>
+<status status="FAIL" starttime="20231215 21:03:33.755" endtime="20231215 21:03:54.431"/>
+</kw>
+<status status="FAIL" starttime="20231215 21:03:33.754" endtime="20231215 21:03:54.432"/>
+</kw>
+<status status="FAIL" starttime="20231215 21:03:33.754" endtime="20231215 21:03:54.432"/>
+</kw>
+<kw name="Renseignement des informations personnels du client" library="scenario_creation_commande">
+<status status="NOT RUN" starttime="20231215 21:03:54.432" endtime="20231215 21:03:54.432"/>
+</kw>
+<kw name="Terminer la phase de commande du produit" library="scenario_creation_commande">
+<status status="NOT RUN" starttime="20231215 21:03:54.433" endtime="20231215 21:03:54.433"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231215 21:03:54.434" endtime="20231215 21:03:55.073"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Fermeture du navigateur ${BROWSER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231215 21:03:55.074" endtime="20231215 21:03:55.075"/>
+</kw>
+<status status="PASS" starttime="20231215 21:03:54.434" endtime="20231215 21:03:55.075"/>
+</kw>
+<status status="FAIL" starttime="20231215 21:02:45.070" endtime="20231215 21:03:55.075">Element with locator 'id:checkout' not found.</status>
+</test>
+<status status="FAIL" starttime="20231215 21:02:42.882" endtime="20231215 21:03:55.078"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test2">Test2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

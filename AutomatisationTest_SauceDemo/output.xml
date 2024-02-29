@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.7 on darwin)" generated="20231217 21:55:37.272" rpa="false" schemaversion="4">
+<suite id="s1" name="AutomatisationTest SauceDemo" source="/Users/root1/Documents/Test/AutomatisationTest_SauceDemo">
+<suite id="s1-s1" name="Test" source="/Users/root1/Documents/Test/AutomatisationTest_SauceDemo/test">
+<suite id="s1-s1-s1" name="Script" source="/Users/root1/Documents/Test/AutomatisationTest_SauceDemo/test/script.robot">
+<test id="s1-s1-s1-t1" name="Scenario d'authentification d'un user qui a un probleme dans son compte" line="26">
+<kw name="Ouvrir le navigateur" library="selenium_utils" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231217 21:55:38.047" level="INFO">Opening browser 'Edge' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20231217 21:55:38.045" endtime="20231217 21:55:41.957"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231217 21:55:41.959" endtime="20231217 21:55:42.433"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Navigateur ouvert</arg>
+<arg>${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231217 21:55:42.433" endtime="20231217 21:55:42.434"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:38.045" endtime="20231217 21:55:42.434"/>
+</kw>
+<kw name="Authentication d'un utilisateur qui a un probleme" library="scenario_creation_de_commande">
+<kw name="Connexion d'un utilisateur avec un username problem_user" library="authentication_page">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champIdUsername}</arg>
+<arg>${usenameProblem}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:42.438" level="INFO">Typing text 'problem_user' into text field 'id:user-name'.</msg>
+<status status="PASS" starttime="20231217 21:55:42.436" endtime="20231217 21:55:42.845"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champIdPassword}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:42.847" level="INFO">Typing text 'secret_sauce' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231217 21:55:42.845" endtime="20231217 21:55:43.017"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${boutonLogin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.018" level="INFO">Clicking button 'id:login-button'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.017" endtime="20231217 21:55:43.209"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:42.436" endtime="20231217 21:55:43.209"/>
+</kw>
+<kw name="Cliquer sur le produit labs backpack" library="inventory_page">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${champLabsBackpack}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.214" level="INFO">Clicking element 'xpath:/html/body/div/div/div/div[2]/div/div/div/div[1]/div[2]/div[1]/a/div'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.211" endtime="20231217 21:55:43.359"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.210" endtime="20231217 21:55:43.359"/>
+</kw>
+<kw name="Appuyer sur le panier" library="ajoutaupanier_page">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${panier}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.364" level="INFO">Clicking link 'xpath:/html/body/div/div/div/div[1]/div[1]/div[3]/a'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.361" endtime="20231217 21:55:43.487"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.359" endtime="20231217 21:55:43.488"/>
+</kw>
+<kw name="Cliquer sur le bouton checkout avec un provbleme user" library="cart_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${boutonCheckoutProblemUser}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.490" level="INFO">Clicking button 'id:checkout'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.489" endtime="20231217 21:55:43.614"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.488" endtime="20231217 21:55:43.614"/>
+</kw>
+<kw name="Renseigner le firstname" library="checkout_page">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champFirstname}</arg>
+<arg>${firstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.616" level="INFO">Typing text 'Meissa' into text field 'id:first-name'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.615" endtime="20231217 21:55:43.758"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.614" endtime="20231217 21:55:43.758"/>
+</kw>
+<kw name="Renseigner le lastName" library="checkout_page">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${champLastname}</arg>
+<arg>${lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.759" level="INFO">Typing text 'Gningue' into text field 'id:last-name'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.758" endtime="20231217 21:55:43.913"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.758" endtime="20231217 21:55:43.913"/>
+</kw>
+<kw name="Cliquer sur le bouton continue" library="checkout_page">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${boutonContinue}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231217 21:55:43.914" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" starttime="20231217 21:55:43.914" endtime="20231217 21:55:44.009"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:43.913" endtime="20231217 21:55:44.009"/>
+</kw>
+<kw name="Message d'erreur pour un problem user" library="checkout_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpathMsgErrorLastnameRequired}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231217 21:55:44.011" endtime="20231217 21:55:44.050"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:44.010" endtime="20231217 21:55:44.050"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:42.435" endtime="20231217 21:55:44.050"/>
+</kw>
+<kw name="Fermer le navigateur" library="selenium_utils" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231217 21:55:44.051" endtime="20231217 21:55:44.286"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Navigateur fermé</arg>
+<arg>${browser}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231217 21:55:44.286" endtime="20231217 21:55:44.287"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:44.050" endtime="20231217 21:55:44.288"/>
+</kw>
+<status status="PASS" starttime="20231217 21:55:38.043" endtime="20231217 21:55:44.288"/>
+</test>
+<status status="PASS" starttime="20231217 21:55:37.353" endtime="20231217 21:55:44.290"/>
+</suite>
+<status status="PASS" starttime="20231217 21:55:37.349" endtime="20231217 21:55:44.292"/>
+</suite>
+<status status="PASS" starttime="20231217 21:55:37.277" endtime="20231217 21:55:44.294"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="AutomatisationTest SauceDemo">AutomatisationTest SauceDemo</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test">AutomatisationTest SauceDemo.Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Script">AutomatisationTest SauceDemo.Test.Script</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
